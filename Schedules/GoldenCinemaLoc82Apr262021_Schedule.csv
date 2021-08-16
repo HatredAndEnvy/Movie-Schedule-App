@@ -1,0 +1,13 @@
+movie,theatre,timeUnit,startTimeDate,endTimeDate,Pre_Show_Advertising,Trailers,Post_Clean_Time
+ Golden_Happytime Murd ,bob,36,2020-01-26 22:00:00,2020-01-26 23:31:00,30,20,15
+ Golden_Happytime Murd ,doe,16,2020-01-26 17:00:00,2020-01-26 18:31:00,30,20,15
+ Golden_Happytime Murd ,sue,1,2020-01-26 13:15:00,2020-01-26 14:46:00,30,20,15
+ Golden_Happytime Murd ,sue,12,2020-01-26 16:00:00,2020-01-26 17:31:00,30,20,15
+ Golden_Happytime Murd ,sue,26,2020-01-26 19:30:00,2020-01-26 21:01:00,30,20,15
+ Golden_Kin ,bob,25,2020-01-26 19:15:00,2020-01-26 20:57:00,30,20,15
+ Golden_Kin ,doe,4,2020-01-26 14:00:00,2020-01-26 15:42:00,30,20,15
+ Golden_Kin ,sue,38,2020-01-26 22:30:00,2020-01-27 00:12:00,30,20,15
+ Golden_Alpha ,bob,3,2020-01-26 13:45:00,2020-01-26 15:22:00,30,20,15
+ Golden_Alpha ,bob,14,2020-01-26 16:30:00,2020-01-26 18:07:00,30,20,15
+ Golden_Alpha ,doe,27,2020-01-26 19:45:00,2020-01-26 21:22:00,30,20,15
+ Golden_Alpha ,doe,38,2020-01-26 22:30:00,2020-01-27 00:07:00,30,20,15
