@@ -4,7 +4,7 @@
 
 # Movie Project prep
 # 1) Create an LP model using pyomo <-- this file
-# 2) Create am app to see schedule(s) <-- not this file..
+# 2) Create an app to see schedule(s) <-- not this file..
 
 # essential changes...
 # 
