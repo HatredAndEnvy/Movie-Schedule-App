@@ -1,0 +1,16 @@
+movie,theatre,timeUnit,startTimeDate,endTimeDate,Pre_Show_Advertising,Trailers,Post_Clean_Time,Runtime
+The Godfather,Auditorium 2,0,2021-08-27 13:00:00,2021-08-27 15:58:00,30,20,15,178
+The Godfather,Auditorium 3,38,2021-08-27 22:30:00,2021-08-28 01:28:00,30,20,15,178
+Citizen Kane,Auditorium 3,0,2021-08-27 13:00:00,2021-08-27 14:59:00,30,20,15,119
+Citizen Kane,Auditorium 3,25,2021-08-27 19:15:00,2021-08-27 21:14:00,30,20,15,119
+Citizen Kane,Auditorium 4,14,2021-08-27 16:30:00,2021-08-27 18:29:00,30,20,15,119
+Citizen Kane,Auditorium 4,26,2021-08-27 19:30:00,2021-08-27 21:29:00,30,20,15,119
+Citizen Kane,Auditorium 1,13,2021-08-27 16:15:00,2021-08-27 18:14:00,30,20,15,119
+Fantasia,Auditorium 3,12,2021-08-27 16:00:00,2021-08-27 18:06:00,30,20,15,126
+Fantasia,Auditorium 1,0,2021-08-27 13:00:00,2021-08-27 15:06:00,30,20,15,126
+Fantasia,Auditorium 1,25,2021-08-27 19:15:00,2021-08-27 21:21:00,30,20,15,126
+Fantasia,Auditorium 1,38,2021-08-27 22:30:00,2021-08-28 00:36:00,30,20,15,126
+Forrest Gump,Auditorium 2,16,2021-08-27 17:00:00,2021-08-27 19:22:00,30,20,15,142
+Forrest Gump,Auditorium 2,30,2021-08-27 20:30:00,2021-08-27 22:52:00,30,20,15,142
+Forrest Gump,Auditorium 4,0,2021-08-27 13:00:00,2021-08-27 15:22:00,30,20,15,142
+Forrest Gump,Auditorium 4,38,2021-08-27 22:30:00,2021-08-28 00:52:00,30,20,15,142
