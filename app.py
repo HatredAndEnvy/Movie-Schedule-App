@@ -176,7 +176,7 @@ def update_gantt_chart(f_path):
     
     fig = px.timeline(movie_fig.append(trailer_fig).append(ads_fig).append(clean_fig), 
                       x_start="Start", x_end="Finish", y="Task", color="Resource", text = "Resource",
-                      title="Daily Movie Schedule for '" + re.search('^Schedules\\\\(.*?)_Schedule\.csv$', f_path).group(1) + "'",
+                      title="Daily Movie Schedule for '" + re.search('Schedules\\\\(.*?)_Schedule\.csv$', f_path).group(1) + "'",
                       labels={"Task" : "Theater", "Resource" : "Movie"})
     # fig.update_traces(textposition = 'inside')
     fig.update_layout(title_font = dict(size = 30))
