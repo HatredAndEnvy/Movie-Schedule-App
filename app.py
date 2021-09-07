@@ -39,6 +39,7 @@ table_columns = [{'name':c, 'id':c} for c in ['Movie', 'Theater', 'StartTime', '
 # create app.
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 
 app.layout = html.Div([
     # Title and explanation div
