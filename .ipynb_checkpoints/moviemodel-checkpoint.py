@@ -4,7 +4,7 @@
 
 # Movie Project prep
 # 1) Create an LP model using pyomo <-- this file
-# 2) Create am app to see schedule(s) <-- not this file..
+# 2) Create an app to see schedule(s) <-- not this file..
 
 # essential changes...
 # 
@@ -40,7 +40,7 @@ def generateSchedule(theatreBookingsDF, theatreDetailsDF, TUsize = 15, startTime
     # Reading the Bookings file. 
     TB = theatreBookingsDF                 
     # no one likes /, -, or spaces in column names. - is a special char.
-    TB.columns = TB.columns.str.replace('[/\- ]', '_')
+    TB.columns = TB.columns.str.replace('[/\- ]', '_', regex = True)
 
     # Cut the Dataframe to only keep what we are currently using.
     # We will need to come back to this to include more features.
@@ -50,7 +50,7 @@ def generateSchedule(theatreBookingsDF, theatreDetailsDF, TUsize = 15, startTime
 
     
     # no one likes /, -, or spaces in column names. - is a special char.
-    TB.columns = TB.columns.str.replace('[/\- ]', '_')
+    TB.columns = TB.columns.str.replace('[/\- ]', '_', regex = True)
 
     # Create model
     model = ConcreteModel()
@@ -138,8 +138,8 @@ def generateSchedule(theatreBookingsDF, theatreDetailsDF, TUsize = 15, startTime
     startTimesDF['endTimeDate'] = [startTime + datetime.timedelta(seconds =int(60*row[1].timeUnit*TUsize + 60*movieRunTimes[row[1].movie])) for row in startTimesDF.iterrows()]
     # [startTime + datetime.timedelta(seconds =60*tU*TUsize + movieRunTimes[startTimesDF.movie]) for tU in startTimesDF.timeUnit]
     
-    movieExtras = {m_i : TB.loc[ TB.Print_Film == m_i, ['Pre_Show_Advertising', 'Trailers', 'Post_Clean_Time']].iloc[0,] for m_i in movies}
-    startTimesDF[['Pre_Show_Advertising', 'Trailers', 'Post_Clean_Time']] = [movieExtras[m_i] for m_i in startTimesDF.movie]
+    movieExtras = {m_i : TB.loc[ TB.Print_Film == m_i, ['Pre_Show_Advertising', 'Trailers', 'Post_Clean_Time', 'Runtime']].iloc[0,] for m_i in movies}
+    startTimesDF[['Pre_Show_Advertising', 'Trailers', 'Post_Clean_Time', 'Runtime']] = [movieExtras[m_i] for m_i in startTimesDF.movie]
     
 #    print(startTimesDF)
     return startTimesDF
