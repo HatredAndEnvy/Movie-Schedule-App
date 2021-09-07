@@ -14,12 +14,12 @@ def check_and_make_schedules():
 
     for did in data_in_dirs:
         if did.name + "_Schedule.csv" not in schedules_have:
-            moviemodel.generateSchedule(pd.read_csv(did.path + "/Theatre_Bookings.csv"), 
-                     pd.read_csv( did.path + "/Theatre_Details.csv"),  
+            moviemodel.generateSchedule(pd.read_csv(os.path.join(did.path, "Theatre_Bookings.csv")), 
+                     pd.read_csv(os.path.join(did.path, "Theatre_Details.csv")),
                      TUsize = 15, 
                      startTime = datetime.datetime.strptime("08/29/21 11:30:00", '%m/%d/%y %H:%M:%S'),
                      endTime = datetime.datetime.strptime("08/29/21 20:45:00", '%m/%d/%y %H:%M:%S')
-                    ).to_csv("Schedules/"+ did.name + "_Schedule.csv",index = False)
+                    ).to_csv(os.path.join("Schedules", did.name + "_Schedule.csv"),index = False)
     return None
 
 if __name__ == "__main__":

@@ -40,7 +40,7 @@ def generateSchedule(theatreBookingsDF, theatreDetailsDF, TUsize = 15, startTime
     # Reading the Bookings file. 
     TB = theatreBookingsDF                 
     # no one likes /, -, or spaces in column names. - is a special char.
-    TB.columns = TB.columns.str.replace('[/\- ]', '_')
+    TB.columns = TB.columns.str.replace('[/\- ]', '_', regex = True)
 
     # Cut the Dataframe to only keep what we are currently using.
     # We will need to come back to this to include more features.
@@ -50,7 +50,7 @@ def generateSchedule(theatreBookingsDF, theatreDetailsDF, TUsize = 15, startTime
 
     
     # no one likes /, -, or spaces in column names. - is a special char.
-    TB.columns = TB.columns.str.replace('[/\- ]', '_')
+    TB.columns = TB.columns.str.replace('[/\- ]', '_', regex = True)
 
     # Create model
     model = ConcreteModel()

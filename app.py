@@ -3,16 +3,21 @@
 
 import os
 import re
+from pathlib import Path
 import base64
 import io
 import datetime
 from datetime import timedelta
 
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+# import dash_core_components as dcc
+from dash import dcc
+# import dash_html_components as html
+from dash import html
 from dash.dependencies import Input, Output, State
-import dash_table
+# import dash_table
+from dash import dash_table
+
 import plotly.express as px
 
 import pandas as pd
@@ -48,7 +53,7 @@ app.layout = html.Div([
     html.Div([
         html.Div(dcc.Dropdown(id='schedule_dd', 
                      options=dd_options,
-                     value='Schedules\\First-Test_Schedule.csv'
+                     value=dd_options[0]['value']
                     ),
                  style = {'display':'inline-block', 'width': '25%'}),
         html.Div(dcc.Upload(
@@ -145,6 +150,7 @@ def update_output(list_of_contents, list_of_names, list_of_dates):
     [Output("schedule_gantt", "figure"), Output("table", "data")],
     [Input("schedule_dd", "value")])
 def update_gantt_chart(f_path):
+    f_name = Path(f_path).name
     df = pd.read_csv(f_path)
     df.startTimeDate = pd.to_datetime(df.startTimeDate)
     df.endTimeDate = pd.to_datetime(df.endTimeDate)
@@ -176,7 +182,7 @@ def update_gantt_chart(f_path):
     
     fig = px.timeline(movie_fig.append(trailer_fig).append(ads_fig).append(clean_fig), 
                       x_start="Start", x_end="Finish", y="Task", color="Resource", text = "Resource",
-                      title="Daily Movie Schedule for '" + re.search('Schedules\\\\(.*?)_Schedule\.csv$', f_path).group(1) + "'",
+                      title="Daily Movie Schedule for '" + re.search('^(.*?)_Schedule\.csv$', f_name).group(1) + "'",
                       labels={"Task" : "Theater", "Resource" : "Movie"})
     # fig.update_traces(textposition = 'inside')
     fig.update_layout(title_font = dict(size = 30))
